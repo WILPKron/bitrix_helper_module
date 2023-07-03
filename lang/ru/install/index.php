@@ -1,0 +1,5 @@
+<?php
+
+$MESS['RP_MODULE_NAME'] = 'Модуль WILP помощник';
+$MESS['RP_MODULE_DESCRIPTION'] = '';
+$MESS['RP_MODULE_PARTNER_NAME'] = 'WILPKron';
