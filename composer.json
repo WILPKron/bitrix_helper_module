@@ -1,6 +1,7 @@
 {
   "name": "wilpkron/bitrix-helper",
   "description": "Bitrix module that helps in the work",
+  "type": "bitrix-modules",
   "autoload": {
     "psr-4": {
       "Wilp\\": "lib/"
