@@ -1,0 +1,11 @@
+{
+  "name": "WILPKron/bitrix-helper",
+  "description": "Bitrix module that helps in the work",
+  "autoload": {
+    "psr-4": {
+      "Wilp\\": "lib/"
+    }
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true
+}
