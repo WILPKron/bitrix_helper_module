@@ -1,16 +1,20 @@
 <?php
 
-namespace Wilp\Events;
+namespace Raketa\Plastfoil\Events;
 
-use Wilp\Helpers\Image\ImageResizeByInterventionImage;
+use Bitrix\Main\Entity;
+use Raketa\Plastfoil\Helpers\IBlockLID;
+use Raketa\Plastfoil\Helpers\Image\ImageResizeByInterventionImage;
 use Bitrix\Main\EventManager;
-use Wilp\Table\OnePageIBlockTable;
-use Wilp\Base\IblockOneElement;
-
+use Raketa\Plastfoil\Table\OnePageIBlockTable;
+use Raketa\Plastfoil\Base\IblockOneElement;
+use Bitrix\Main\ORM\Data\DataManager;
+use Raketa\Plastfoil\Model\SectionDocumentsTable;
 class EventsRun
 {
 	static public function run() {
 		self::all();
+
 		if(\CSite::InDir('/bitrix/admin/')) {
 			self::admin();
 		} else {
@@ -18,6 +22,10 @@ class EventsRun
 		}
 		self::initModuleFields();
 	}
+
+	/**
+	 * Метод для установки событий в административной части сайта
+	**/
 
 	static private function admin()
 	{
@@ -32,6 +40,11 @@ class EventsRun
 			}
 		});
 	}
+
+	/**
+	 * Метод для установки событий в публичной части сайта
+	 **/
+
 	static private function user()
 	{
 		EventManager::getInstance()->addEventHandler("main", "OnEndBufferContent", function (&$content) {
@@ -67,24 +80,46 @@ class EventsRun
 	}
 	static public function initModuleFields()
 	{
-		//$fieldsClassName = [
-		//	"UserTypeMultiple",
-		//	"UserTypeTable",
-		//];
-		//$instance = EventManager::getInstance();
-		//foreach ($fieldsClassName as $className) {
-		//	$instance->addEventHandler("iblock", "OnIBlockPropertyBuildList", [
-		//		"\\Wilp\\UserType\\Iblock\\$className",
-		//		'GetUserTypeDescription'
-		//	]);
-		//}
-		// $instance->addEventHandler("main", "OnUserTypeBuildList", [
-		// 	"\\Wilp\\UserType\\Main\\CUserMultipleType",
-		// 	'GetUserTypeDescription'
-		// ]);
+		$fieldsClassName = [
+			"UserTypeMultiple",
+			"UserTypeTable",
+		];
+		$instance = EventManager::getInstance();
+		foreach ($fieldsClassName as $className) {
+			$instance->addEventHandler("iblock", "OnIBlockPropertyBuildList", [
+				"\\Raketa\\Plastfoil\\UserType\\Iblock\\$className",
+				'GetUserTypeDescription'
+			]);
+		}
+
+		 $instance->addEventHandler("main", "OnUserTypeBuildList", [
+		 	"\\Raketa\\Plastfoil\\UserType\\Main\\CUserMultipleType",
+		 	'GetUserTypeDescription'
+		 ]);
 	}
+	/**
+	 * Метод для установки событий
+	 **/
 	static public function all()
 	{
+
+		EventManager::getInstance()->addEventHandler('iblock', 'OnAfterIBlockSectionAdd', function (&$arFields) {
+			$iblockId = IBlockLID::IBlockIDByCode(IBlockLID::$IBLOCK_FILE_LIBRARY_GEREEAL);
+			if ($arFields["IBLOCK_ID"] == $iblockId && $arFields["ID"] > 0) {
+				\Raketa\Plastfoil\Table\RaketaDocumentsSectionsLinkTable::add([
+					'IBLOCK_SECTION_PARENT_ID' => $arFields["ID"],
+					'IBLOCK_SECTION_CHILD_ID' => 0
+				]);
+			}
+		});
+		EventManager::getInstance()->addEventHandler('iblock', 'OnAfterIBlockSectionDelete', function (&$arFields) {
+			$iblockId = IBlockLID::IBlockIDByCode(IBlockLID::$IBLOCK_FILE_LIBRARY_GEREEAL);
+			if ($arFields["IBLOCK_ID"] == $iblockId && $arFields["ID"] > 0) {
+				\Raketa\Plastfoil\Table\RaketaDocumentsSectionsLinkTable::deleteAll($arFields['ID']);
+			}
+		});
+
+
 		include_once __DIR__ . '../../../globalFunction.php';
 	}
 }

@@ -1,6 +1,6 @@
 <?php
 
-namespace Wilp\Helpers;
+namespace Raketa\Plastfoil\Helpers;
 
 use \Bitrix\Main\Data\Cache;
 use \Bitrix\Main\Application;
@@ -8,11 +8,17 @@ use Bitrix\Main\Context;
 
 class IBlockElement
 {
+	/** @var array $order массив для сортировки элементов **/
 	public $order = ['SORT' => 'ASC'];
+	/** @var array $filter массив фильрации элементов **/
 	public $filter = [];
+	/** @var array|boolean $group массив для группировки элементов **/
 	public $group = false;
+	/** @var array|boolean $nav массив для настройки навигации элементов **/
 	public $nav = false;
+	/** @var array $select массив полей которые будут выбраны у элемента **/
 	public $select = ['ID', 'IBLOCK_ID'];
+	/** @var boolean $getDescription поле для выборки пользовательских свойст элемента **/
 	public $getDescription = false;
 	public $propertyList = [];
 	public $iblockIDs = [];
@@ -26,6 +32,9 @@ class IBlockElement
 
 	public function __construct($cacheTtl = (86400 * 30))
 	{
+		if(!\Bitrix\Main\Loader::includeModule("iblock")) {
+			throw new \Exception('Модуль инфоблока не найден');
+		}
 		$this->cacheTtl = $cacheTtl;
 		$this->cache = Cache::createInstance();
 		$this->taggedCache = Application::getInstance()->getTaggedCache();
@@ -261,6 +270,12 @@ class IBlockElement
 	{
 		$this->order = $order;
 		return $this;
+	}
+
+	public function first()
+	{
+		$res = $this->getList();
+		return array_shift($res);
 	}
 
 }

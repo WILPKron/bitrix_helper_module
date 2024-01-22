@@ -1,1 +1,1 @@
-<?php require($_SERVER["DOCUMENT_ROOT"]."/local/modules/wilp.helper/admin/raketa_oneblockelement.php");?>
+<?php require($_SERVER["DOCUMENT_ROOT"]."/local/modules/raketa.plastfoil/admin/raketa_oneblockelement.php");?>

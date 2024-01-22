@@ -1,6 +1,6 @@
 <?php
 
-namespace Wilp\UserType\Iblock;
+namespace Raketa\Plastfoil\UserType\Iblock;
 
 use Bitrix\Main\DB\Exception;
 use Bitrix\Main\Loader,

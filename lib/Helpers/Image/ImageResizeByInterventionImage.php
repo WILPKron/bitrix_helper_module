@@ -1,6 +1,6 @@
 <?php
 
-namespace Wilp\Helpers\Image;
+namespace Raketa\Plastfoil\Helpers\Image;
 
 class ImageResizeByInterventionImage
 {

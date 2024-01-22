@@ -17,7 +17,7 @@ Loc::loadMessages(__FILE__);
 		'items' => [
 			[
 				'text' => "Параметры модуля",
-				'url' => 'settings.php?lang=ru&mid=wilp.helper',
+				'url' => 'settings.php?lang=ru&mid=raketa.plastfoil',
 				'icon' => 'util_menu_icon',
 				'more_url' => [
 					'posting_edit.php'
@@ -41,6 +41,20 @@ Loc::loadMessages(__FILE__);
 					'posting_edit.php'
 				],
 				'title' => GetMessage('mnu_posting_alt')
+			],
+			[
+				'text' => "Документы",
+				'url' => 'raketa_document_redactore.php',
+				'icon' => 'util_menu_icon',
+				'more_url' => [
+					'posting_edit.php'
+				],
+				'title' => GetMessage('mnu_posting_alt')
+			],
+			[
+				'text' => 'Конструктор меню',
+				'url' => 'raketa_menu_editor.php',
+				'icon' => 'util_menu_icon',
 			]
 		]
 	];

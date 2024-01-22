@@ -1,6 +1,6 @@
 <?php
 
-namespace Wilp\Helpers;
+namespace Raketa\Plastfoil\Helpers;
 
 class Main
 {
@@ -27,6 +27,19 @@ class Main
 
 		return $svg;
 		//return '<svg ' . ($class ? 'class="' . $class . '"' : '') . ' width="' . $w . '" height="' . $h . '" '. $dataAttr .'><use xlink:href="' . $link . '#' . $id . '"></use></svg>';
+	}
+
+	public static function pre($obj)
+	{
+		echo '<pre>';
+			print_r($obj);
+		echo '</pre>';
+	}
+	public static function var_dump($obj)
+	{
+		echo '<pre>';
+			var_dump($obj);
+		echo '</pre>';
 	}
 
 	public static function initOneBlockElements(array $elements = []): void

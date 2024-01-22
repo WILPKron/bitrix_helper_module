@@ -1,12 +1,12 @@
 <?php
 
-namespace Wilp\Base;
+namespace Raketa\Plastfoil\Base;
 
-use Wilp\Helpers\Main as HelperMain;
+use Raketa\Plastfoil\Helpers\Main as HelperMain;
 
 class SetMetaData
 {
-	public static function setMeta($title, $description = '', $keyword = ''):void
+	public static function setMeta($title, $description = '', $keyword = '', $navName = ''):void
 	{
 		if (!empty($title)) {
 			HelperMain::getApp()->SetPageProperty('title', $title);
@@ -16,6 +16,10 @@ class SetMetaData
 		}
 		if(!empty($keyword)) {
 			HelperMain::getApp()->SetPageProperty('keywords', $keyword);
+		}
+
+		if(!empty($navName)) {
+			self::setTitle($navName, 'Y');
 		}
 	}
 

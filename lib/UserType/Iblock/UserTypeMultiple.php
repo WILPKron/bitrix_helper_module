@@ -1,6 +1,6 @@
 <?php
 
-namespace Wilp\UserType\Iblock;
+namespace Raketa\Plastfoil\UserType\Iblock;
 
 use Bitrix\Main\DB\Exception,
 	Bitrix\Main\Localization\Loc,
@@ -109,7 +109,7 @@ class UserTypeMultiple
 				grid-column: 1 / -1;
 			}
 
-			<?php for($i = 1; $i <= $sizeColumn - 1; $i++):?>
+			<?php for($i = 1; $i <= $sizeColumn; $i++):?>
 				#contaner_<?=$arProperty['ID']?>.raketa-field-files-additional-fields.grid .additional-field.additional-field__<?=$i?> {
 					grid-column-end: span <?=$i?>;
 				}

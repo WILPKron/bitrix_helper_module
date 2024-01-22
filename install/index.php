@@ -8,7 +8,7 @@ use Bitrix\Main\EventManager;
 
 Loc::loadMessages(__FILE__);
 
-class wilp_helper extends CModule
+class raketa_plastfoil extends CModule
 {
 
 	private static $AJAX_FOLDER = __DIR__ . '/../../../../ajax/';
@@ -25,7 +25,7 @@ class wilp_helper extends CModule
 			$this->MODULE_VERSION_DATE = $arModuleVersion['VERSION_DATE'];
 		}
 
-		$this->MODULE_ID = 'wilp.helper';
+		$this->MODULE_ID = 'raketa.plastfoil';
 		$this->MODULE_NAME = Loc::getMessage('RP_MODULE_NAME');
 		$this->MODULE_DESCRIPTION = Loc::getMessage('RP_MODULE_DESCRIPTION');
 		$this->MODULE_GROUP_RIGHTS = 'N';
@@ -37,8 +37,15 @@ class wilp_helper extends CModule
 	{
 		$eventManager = \Bitrix\Main\EventManager::getInstance();
 		ModuleManager::registerModule($this->MODULE_ID);
-		//$eventManager->registerEventHandlerCompatible("iblock", "OnIBlockPropertyBuildList", $this->MODULE_ID, "\\Wilp\\UserType\\RaketaUserTypeTable", "GetUserTypeDescription");
-		$eventManager->registerEventHandlerCompatible("main", "OnPageStart", $this->MODULE_ID, "\\Wilp\\Events\\EventsRun", "run");
+		//$eventManager->registerEventHandlerCompatible("iblock", "OnIBlockPropertyBuildList", $this->MODULE_ID, "\\Raketa\\Plastfoil\\UserType\\RaketaUserTypeTable", "GetUserTypeDescription");
+		$eventManager->registerEventHandlerCompatible("main", "OnPageStart", $this->MODULE_ID, "\\Raketa\\Plastfoil\\Events\\EventsRun", "run");
+
+		if(Loader::includeModule($this->MODULE_ID)) {
+			\Raketa\Plastfoil\Table\RaketaDocumentsSectionsLinkTable::createTable();
+			\Raketa\Plastfoil\Table\Menu\MenuEntityTable::createTable();
+			\Raketa\Plastfoil\Table\Menu\MenuLineTable::createTable();
+		}
+
 		$this->InstallFiles();
 	}
 
@@ -46,8 +53,8 @@ class wilp_helper extends CModule
 	{
 		$eventManager = \Bitrix\Main\EventManager::getInstance();
 		$this->UnInstallFiles();
-		//$eventManager->unRegisterEventHandler("iblock", "OnIBlockPropertyBuildList", $this->MODULE_ID, "\\Wilp\\UserType\\RaketaUserTypeTable", "GetUserTypeDescription");
-		$eventManager->unRegisterEventHandler("main", "OnPageStart", $this->MODULE_ID, "\\Wilp\\Events\\EventsRun", "run");
+		//$eventManager->unRegisterEventHandler("iblock", "OnIBlockPropertyBuildList", $this->MODULE_ID, "\\Raketa\\Plastfoil\\UserType\\RaketaUserTypeTable", "GetUserTypeDescription");
+		$eventManager->unRegisterEventHandler("main", "OnPageStart", $this->MODULE_ID, "\\Raketa\\Plastfoil\\Events\\EventsRun", "run");
 		ModuleManager::unRegisterModule($this->MODULE_ID);
 	}
 

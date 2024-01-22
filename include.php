@@ -6,11 +6,9 @@ function RaketaReadPathToArray($path)
 	$arr = [];
 	if ($handle = opendir($path)) {
 		while (false !== ($entry = readdir($handle))) {
-            $posPhp = strpos($entry, '.php');
-            $posDot = strpos($entry, '.');
 			if (
 				$entry != "." && $entry != ".." && $entry !== 'index.php' && $entry !== 'OptionsInfo.php' &&
-				($posPhp !== false || $posDot !== false)
+				(str_contains($entry, '.php') || !str_contains($entry, '.'))
 			) {
 				$arr[$entry] = RaketaReadPathToArray($path . '/' . $entry);
 				if (is_array($arr[$entry]) && empty($arr[$entry])) {
@@ -35,13 +33,13 @@ function computeFilePaths(array $fileTree): array
 		$className = implode('/', $folders) . '/' . str_replace('.php', '', $fileName);
 		$className = str_replace('/', '\\', $className);
 
-		$filePaths['\\Wilp\\' . $className] = 'lib/' . implode('/', $folders) . '/' . $fileName;
-		if (!str_contains($filePaths['\\Wilp\\' . $className], '.php')) {
-			unset($filePaths['\\Wilp\\' . $className]);
+		$filePaths['\\Raketa\\Plastfoil\\' . $className] = 'lib/' . implode('/', $folders) . '/' . $fileName;
+		if (!str_contains($filePaths['\\Raketa\\Plastfoil\\' . $className], '.php')) {
+			unset($filePaths['\\Raketa\\Plastfoil\\' . $className]);
 		}
 	}
 
 	return $filePaths;
 }
 
-CModule::AddAutoloadClasses("wilp.helper", computeFilePaths(RaketaReadPathToArray(__DIR__ . '/lib')));
+CModule::AddAutoloadClasses("raketa.plastfoil", computeFilePaths(RaketaReadPathToArray(__DIR__ . '/lib')));

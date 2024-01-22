@@ -1,9 +1,9 @@
 <?php
 
-namespace Wilp\Base;
+namespace Raketa\Plastfoil\Base;
 
 use Bitrix\Main\EventManager;
-use Wilp\Helpers\Main as HelperMain;
+use Raketa\Plastfoil\Helpers\Main as HelperMain;
 use Bitrix\Main\Loader;
 
 /**
@@ -14,9 +14,9 @@ use Bitrix\Main\Loader;
 
 class IBlockOneElement
 {
-    public static $IBLOCK_TYPE; //тип инфоблока
-    public static $IBLOCK_ID = 0; //ID инфоблока
-    public static $ELEMENT_ID = 0; // id записи
+    public static $IBLOCK_TYPE;
+    public static $IBLOCK_ID = 0;
+    public static $ELEMENT_ID = 0;
 
     public function __construct($iblockType, $iblockCode)
     {

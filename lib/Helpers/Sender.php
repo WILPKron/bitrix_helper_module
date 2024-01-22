@@ -1,6 +1,6 @@
 <?php
 
-namespace Wilp\Helpers;
+namespace Raketa\Plastfoil\Helpers;
 
 use Bitrix\Main\Mail\Event;
 

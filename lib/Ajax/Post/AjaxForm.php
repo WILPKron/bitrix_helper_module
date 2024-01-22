@@ -1,10 +1,10 @@
 <?php
 
-namespace Wilp\Ajax\Post;
+namespace Raketa\Plastfoil\Ajax\Post;
 
-use Wilp\Helpers\Response,
-	Wilp\Helpers\Form,
-	Wilp\Helpers\Sender;
+use Raketa\Plastfoil\Helpers\Response,
+	Raketa\Plastfoil\Helpers\Form,
+	Raketa\Plastfoil\Helpers\Sender;
 
 class AjaxForm
 {

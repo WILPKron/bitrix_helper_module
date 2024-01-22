@@ -1,9 +1,9 @@
 <?php
 
-namespace Wilp\Ajax\Post;
+namespace Raketa\Plastfoil\Ajax\Post;
 
-use Wilp\Helpers\Response;
-use Wilp\Table\OnePageIBlockTable;
+use Raketa\Plastfoil\Helpers\Response;
+use Raketa\Plastfoil\Table\OnePageIBlockTable;
 
 class AjaxOneblock
 {

@@ -1,7 +1,7 @@
 <?php
 require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/modules/main/include/prolog_before.php");
 
-if (!CModule::IncludeModule('wilp.helper')) {
+if (!CModule::IncludeModule('raketa.plastfoil')) {
 	return;
 }
 
@@ -36,7 +36,7 @@ try {
 		throw new \Exception('Указано неверное наименование контроллера.');
 	}
 
-	$sClassName = "\\Wilp\\Ajax\\$requestMethodUcFirst\\$sControllerName";
+	$sClassName = "\\Raketa\\Plastfoil\\Ajax\\$requestMethodUcFirst\\$sControllerName";
 	$sMethodName = ucfirst(strtolower($sMethodName));
 	$sMethodName = "action$sMethodName";
 	if (!class_exists($sClassName)) {

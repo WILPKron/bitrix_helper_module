@@ -1,6 +1,6 @@
 <?php
 
-namespace Wilp\UserType\Main;
+namespace Raketa\Plastfoil\UserType\Main;
 
 use Bitrix\Main\Application;
 use Bitrix\Main\Localization\Loc;
