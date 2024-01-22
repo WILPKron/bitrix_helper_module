@@ -7,9 +7,12 @@
       "Wilp\\": "lib/"
     }
   },
-  "extra": {
-    "installer-paths": {
-      "modules/{$vendor}.{$name}/": ["type:bitrix-d7-module"]
+  "require": {
+    "composer/installers": "^2.2"
+  },
+  "config": {
+    "allow-plugins": {
+      "composer/installers": true
     }
   },
   "prefer-stable": true
