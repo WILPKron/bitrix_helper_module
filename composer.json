@@ -7,6 +7,10 @@
       "Wilp\\": "lib/"
     }
   },
-  "minimum-stability": "dev",
+  "extra": {
+    "installer-paths": {
+      "modules/{$vendor}.{$name}/": ["type:bitrix-d7-module"]
+    }
+  },
   "prefer-stable": true
 }
