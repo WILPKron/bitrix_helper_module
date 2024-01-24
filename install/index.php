@@ -35,7 +35,7 @@ class wilpkron_bitrix_helper extends CModule
 	public function doInstall()
 	{
 		$eventManager = \Bitrix\Main\EventManager::getInstance();
-        \Bitrix\Main\EventManager::registerModule($this->MODULE_ID);
+        ModuleManager::registerModule($this->MODULE_ID);
 		$eventManager->registerEventHandlerCompatible("main", "OnPageStart", $this->MODULE_ID, "\\Wilp\\Events\\EventsRun", "run");
 
 		if(Loader::includeModule($this->MODULE_ID)) {
