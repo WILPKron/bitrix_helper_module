@@ -8,7 +8,7 @@ use Bitrix\Main\EventManager;
 
 Loc::loadMessages(__FILE__);
 
-class raketa_plastfoil extends CModule
+class wilpkron_bitrix_helper extends CModule
 {
 
 	private static $AJAX_FOLDER = __DIR__ . '/../../../../ajax/';
@@ -36,14 +36,11 @@ class raketa_plastfoil extends CModule
 	public function doInstall()
 	{
 		$eventManager = \Bitrix\Main\EventManager::getInstance();
-		ModuleManager::registerModule($this->MODULE_ID);
-		//$eventManager->registerEventHandlerCompatible("iblock", "OnIBlockPropertyBuildList", $this->MODULE_ID, "\\Raketa\\Plastfoil\\UserType\\RaketaUserTypeTable", "GetUserTypeDescription");
+        \Bitrix\Main\EventManager::registerModule($this->MODULE_ID);
 		$eventManager->registerEventHandlerCompatible("main", "OnPageStart", $this->MODULE_ID, "\\Raketa\\Plastfoil\\Events\\EventsRun", "run");
 
 		if(Loader::includeModule($this->MODULE_ID)) {
-			\Raketa\Plastfoil\Table\RaketaDocumentsSectionsLinkTable::createTable();
 			\Raketa\Plastfoil\Table\Menu\MenuEntityTable::createTable();
-			\Raketa\Plastfoil\Table\Menu\MenuLineTable::createTable();
 		}
 
 		$this->InstallFiles();

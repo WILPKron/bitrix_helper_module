@@ -1,5 +1,5 @@
 {
-  "name": "wilpkron/bitrix-helper",
+  "name": "wilpkron/bitrix_helper",
   "description": "Bitrix module that helps in the work",
   "type": "bitrix-d7-module",
   "autoload": {
@@ -8,7 +8,8 @@
     }
   },
   "require": {
-    "composer/installers": "^2.2"
+    "composer/installers": "^2.2",
+    "intervention/image": "^2.7"
   },
   "config": {
     "allow-plugins": {
