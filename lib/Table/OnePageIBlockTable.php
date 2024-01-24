@@ -2,7 +2,6 @@
 namespace Wilp\Table;
 
 use Bitrix\Main\Localization\Loc,
-	Bitrix\Main\ORM\Data\DataManager,
 	Bitrix\Main\ORM\Fields\IntegerField,
 	Bitrix\Main\ORM\Fields\TextField;
 
@@ -19,7 +18,7 @@ use Bitrix\Main\Localization\Loc,
  * @package Bitrix\One
  **/
 
-class OnePageIBlockTable extends DataManager
+class OnePageIBlockTable extends WilpDataManager
 {
 	/**
 	 * Returns DB table name for entity.
