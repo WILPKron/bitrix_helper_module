@@ -39,6 +39,7 @@ class wilpkron_bitrix_helper extends CModule
 		$eventManager->registerEventHandlerCompatible("main", "OnPageStart", $this->MODULE_ID, "\\Wilp\\Events\\EventsRun", "run");
 
 		if(Loader::includeModule($this->MODULE_ID)) {
+			\Wilp\Table\OnePageIBlockTable::createTable();
 			\Wilp\Table\Menu\MenuEntityTable::createTable();
 		}
 
