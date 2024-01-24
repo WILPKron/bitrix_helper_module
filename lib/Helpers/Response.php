@@ -1,6 +1,6 @@
 <?php
 
-namespace Raketa\Plastfoil\Helpers;
+namespace Wilp\Helpers;
 
 use \Bitrix\Main\Application;
 

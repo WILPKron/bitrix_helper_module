@@ -33,9 +33,9 @@ function computeFilePaths(array $fileTree): array
 		$className = implode('/', $folders) . '/' . str_replace('.php', '', $fileName);
 		$className = str_replace('/', '\\', $className);
 
-		$filePaths['\\Raketa\\Plastfoil\\' . $className] = 'lib/' . implode('/', $folders) . '/' . $fileName;
-		if (!str_contains($filePaths['\\Raketa\\Plastfoil\\' . $className], '.php')) {
-			unset($filePaths['\\Raketa\\Plastfoil\\' . $className]);
+		$filePaths['\\Wilp\\' . $className] = 'lib/' . implode('/', $folders) . '/' . $fileName;
+		if (!str_contains($filePaths['\\Wilp\\' . $className], '.php')) {
+			unset($filePaths['\\Wilp\\' . $className]);
 		}
 	}
 

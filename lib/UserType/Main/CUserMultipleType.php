@@ -1,6 +1,6 @@
 <?php
 
-namespace Raketa\Plastfoil\UserType\Main;
+namespace Wilp\UserType\Main;
 
 use Bitrix\Main\Loader;
 use Bitrix\Main\UserField\TypeBase;

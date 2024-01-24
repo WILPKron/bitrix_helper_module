@@ -8,8 +8,8 @@ use Bitrix\Main\Loader,
 	Bitrix\Iblock,
 	Bitrix\Currency,
 	Bitrix\Catalog,
-	Raketa\Plastfoil\Model\SectionDocumentsTable,
-	Raketa\Plastfoil\Table\RaketaDocumentsSectionsLinkTable;
+	Wilp\Model\SectionDocumentsTable,
+	Wilp\Table\RaketaDocumentsSectionsLinkTable;
 require_once($_SERVER["DOCUMENT_ROOT"]."/bitrix/modules/main/include/prolog_admin_before.php");
 Loader::includeModule("iblock");
 Loader::includeModule("raketa.plastfoil");

@@ -1,6 +1,6 @@
 <?php
 
-namespace Raketa\Plastfoil\UserType\Iblock;
+namespace Wilp\UserType\Iblock;
 
 use Bitrix\Main\DB\Exception,
 	Bitrix\Main\Localization\Loc,

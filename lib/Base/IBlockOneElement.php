@@ -1,9 +1,9 @@
 <?php
 
-namespace Raketa\Plastfoil\Base;
+namespace Wilp\Base;
 
 use Bitrix\Main\EventManager;
-use Raketa\Plastfoil\Helpers\Main as HelperMain;
+use Wilp\Helpers\Main as HelperMain;
 use Bitrix\Main\Loader;
 
 /**

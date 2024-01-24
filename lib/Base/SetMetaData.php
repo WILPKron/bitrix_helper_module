@@ -1,8 +1,8 @@
 <?php
 
-namespace Raketa\Plastfoil\Base;
+namespace Wilp\Base;
 
-use Raketa\Plastfoil\Helpers\Main as HelperMain;
+use Wilp\Helpers\Main as HelperMain;
 
 class SetMetaData
 {

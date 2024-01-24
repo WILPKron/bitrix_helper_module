@@ -8,7 +8,7 @@ use Bitrix\Main\Loader,
 	Bitrix\Iblock,
 	Bitrix\Currency,
 	Bitrix\Catalog,
-	Raketa\Plastfoil\Model\SectionDocumentsTable;
+	Wilp\Model\SectionDocumentsTable;
 
 require_once($_SERVER["DOCUMENT_ROOT"]."/bitrix/modules/main/include/prolog_admin_before.php");
 Loader::includeModule("iblock");
@@ -52,7 +52,7 @@ if(!empty($request->get('action'))) {
 
 		foreach ($newParent as $parentId) {
 			try {
-				\Raketa\Plastfoil\Table\RaketaDocumentsSectionsLinkTable::add([
+				\Wilp\Table\RaketaDocumentsSectionsLinkTable::add([
 					'IBLOCK_SECTION_PARENT_ID' => $parentId,
 					'IBLOCK_SECTION_CHILD_ID' => $sectionId
 				]);
@@ -60,7 +60,7 @@ if(!empty($request->get('action'))) {
 		}
 		foreach ($deleteParent as $parentId) {
 			try {
-				\Raketa\Plastfoil\Table\RaketaDocumentsSectionsLinkTable::delete([
+				\Wilp\Table\RaketaDocumentsSectionsLinkTable::delete([
 					'parent' => $parentId, 'child' => $sectionId
 				]);
 			} catch (Exception $exception) {}

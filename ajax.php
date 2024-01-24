@@ -36,7 +36,7 @@ try {
 		throw new \Exception('Указано неверное наименование контроллера.');
 	}
 
-	$sClassName = "\\Raketa\\Plastfoil\\Ajax\\$requestMethodUcFirst\\$sControllerName";
+	$sClassName = "\\Wilp\\Ajax\\$requestMethodUcFirst\\$sControllerName";
 	$sMethodName = ucfirst(strtolower($sMethodName));
 	$sMethodName = "action$sMethodName";
 	if (!class_exists($sClassName)) {

@@ -1,12 +1,12 @@
 <?php
 
-namespace Raketa\Plastfoil\Table;
+namespace Wilp\Table;
 
 use Bitrix\Main\ORM\Data\DataManager;
 use Bitrix\Highloadblock\HighloadBlockLangTable;
 use Bitrix\Highloadblock\HighloadBlockTable;
 use Bitrix\Main\Loader;
-use Raketa\Plastfoil\Helpers\Main;
+use Wilp\Helpers\Main;
 use Bitrix\Highloadblock as HL;
 
 abstract class RaketaDataManager extends DataManager

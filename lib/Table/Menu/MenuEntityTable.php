@@ -1,11 +1,11 @@
 <?php
 
-namespace Raketa\Plastfoil\Table\Menu;
+namespace Wilp\Table\Menu;
 
 use Bitrix\Main\Entity\BooleanField;
 use Bitrix\Main\ORM\Fields\IntegerField;
 use Bitrix\Main\ORM\Fields\TextField;
-use Raketa\Plastfoil\Table\RaketaDataManager;
+use Wilp\Table\RaketaDataManager;
 
 class MenuEntityTable extends RaketaDataManager
 {

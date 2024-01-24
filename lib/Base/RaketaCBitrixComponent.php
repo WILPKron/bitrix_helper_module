@@ -1,6 +1,6 @@
 <?php
 
-namespace Raketa\Plastfoil\Base;
+namespace Wilp\Base;
 
 use Bitrix\Main\Loader;
 class RaketaCBitrixComponent extends \CBitrixComponent

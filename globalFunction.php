@@ -1,6 +1,6 @@
 <?php
 
-use Raketa\Plastfoil\Helpers\LangReader;
+use Wilp\Helpers\LangReader;
 
 if (!function_exists('__')) {
 	function __($str = null, $replace = [], $locale = null)

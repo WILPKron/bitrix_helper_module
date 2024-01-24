@@ -1,5 +1,5 @@
 <?php
-namespace Raketa\Plastfoil\Table;
+namespace Wilp\Table;
 
 use Bitrix\Main\Localization\Loc,
 	Bitrix\Main\ORM\Data\DataManager,

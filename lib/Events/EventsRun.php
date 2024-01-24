@@ -1,15 +1,15 @@
 <?php
 
-namespace Raketa\Plastfoil\Events;
+namespace Wilp\Events;
 
 use Bitrix\Main\Entity;
-use Raketa\Plastfoil\Helpers\IBlockLID;
-use Raketa\Plastfoil\Helpers\Image\ImageResizeByInterventionImage;
+use Wilp\Helpers\IBlockLID;
+use Wilp\Helpers\Image\ImageResizeByInterventionImage;
 use Bitrix\Main\EventManager;
-use Raketa\Plastfoil\Table\OnePageIBlockTable;
-use Raketa\Plastfoil\Base\IblockOneElement;
+use Wilp\Table\OnePageIBlockTable;
+use Wilp\Base\IblockOneElement;
 use Bitrix\Main\ORM\Data\DataManager;
-use Raketa\Plastfoil\Model\SectionDocumentsTable;
+use Wilp\Model\SectionDocumentsTable;
 class EventsRun
 {
 	static public function run() {
@@ -87,13 +87,13 @@ class EventsRun
 		$instance = EventManager::getInstance();
 		foreach ($fieldsClassName as $className) {
 			$instance->addEventHandler("iblock", "OnIBlockPropertyBuildList", [
-				"\\Raketa\\Plastfoil\\UserType\\Iblock\\$className",
+				"\\Wilp\\UserType\\Iblock\\$className",
 				'GetUserTypeDescription'
 			]);
 		}
 
 		 $instance->addEventHandler("main", "OnUserTypeBuildList", [
-		 	"\\Raketa\\Plastfoil\\UserType\\Main\\CUserMultipleType",
+		 	"\\Wilp\\UserType\\Main\\CUserMultipleType",
 		 	'GetUserTypeDescription'
 		 ]);
 	}
@@ -106,7 +106,7 @@ class EventsRun
 		EventManager::getInstance()->addEventHandler('iblock', 'OnAfterIBlockSectionAdd', function (&$arFields) {
 			$iblockId = IBlockLID::IBlockIDByCode(IBlockLID::$IBLOCK_FILE_LIBRARY_GEREEAL);
 			if ($arFields["IBLOCK_ID"] == $iblockId && $arFields["ID"] > 0) {
-				\Raketa\Plastfoil\Table\RaketaDocumentsSectionsLinkTable::add([
+				\Wilp\Table\RaketaDocumentsSectionsLinkTable::add([
 					'IBLOCK_SECTION_PARENT_ID' => $arFields["ID"],
 					'IBLOCK_SECTION_CHILD_ID' => 0
 				]);
@@ -115,7 +115,7 @@ class EventsRun
 		EventManager::getInstance()->addEventHandler('iblock', 'OnAfterIBlockSectionDelete', function (&$arFields) {
 			$iblockId = IBlockLID::IBlockIDByCode(IBlockLID::$IBLOCK_FILE_LIBRARY_GEREEAL);
 			if ($arFields["IBLOCK_ID"] == $iblockId && $arFields["ID"] > 0) {
-				\Raketa\Plastfoil\Table\RaketaDocumentsSectionsLinkTable::deleteAll($arFields['ID']);
+				\Wilp\Table\RaketaDocumentsSectionsLinkTable::deleteAll($arFields['ID']);
 			}
 		});
 
