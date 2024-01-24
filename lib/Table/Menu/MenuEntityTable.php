@@ -5,9 +5,9 @@ namespace Wilp\Table\Menu;
 use Bitrix\Main\Entity\BooleanField;
 use Bitrix\Main\ORM\Fields\IntegerField;
 use Bitrix\Main\ORM\Fields\TextField;
-use Wilp\Table\RaketaDataManager;
+use Wilp\Table\WilpDataManager;
 
-class MenuEntityTable extends RaketaDataManager
+class MenuEntityTable extends WilpDataManager
 {
 	public static function getTableName()
 	{

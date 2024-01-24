@@ -9,7 +9,7 @@ use Bitrix\Main\Loader;
 use Wilp\Helpers\Main;
 use Bitrix\Highloadblock as HL;
 
-abstract class RaketaDataManager extends DataManager
+abstract class WilpDataManager extends DataManager
 {
 	static $LAST_ERROR = [];
 

@@ -42,4 +42,4 @@ function computeFilePaths(array $fileTree): array
 	return $filePaths;
 }
 
-CModule::AddAutoloadClasses("raketa.plastfoil", computeFilePaths(RaketaReadPathToArray(__DIR__ . '/lib')));
+CModule::AddAutoloadClasses("wilpkron.bitrix_helper", computeFilePaths(RaketaReadPathToArray(__DIR__ . '/lib')));
