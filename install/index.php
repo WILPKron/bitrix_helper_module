@@ -34,7 +34,7 @@ class wilpkron_bitrix_helper extends CModule
 
 	public function doInstall()
 	{
-		$eventManager = \Bitrix\Main\EventManager::getInstance();
+		$eventManager = EventManager::getInstance();
         ModuleManager::registerModule($this->MODULE_ID);
 		$eventManager->registerEventHandlerCompatible("main", "OnPageStart", $this->MODULE_ID, "\\Wilp\\Events\\EventsRun", "run");
 
@@ -47,7 +47,7 @@ class wilpkron_bitrix_helper extends CModule
 
 	public function doUninstall()
 	{
-		$eventManager = \Bitrix\Main\EventManager::getInstance();
+		$eventManager = EventManager::getInstance();
 		$this->UnInstallFiles();
 		//$eventManager->unRegisterEventHandler("iblock", "OnIBlockPropertyBuildList", $this->MODULE_ID, "\\Wilp\\UserType\\RaketaUserTypeTable", "GetUserTypeDescription");
 		$eventManager->unRegisterEventHandler("main", "OnPageStart", $this->MODULE_ID, "\\Wilp\\Events\\EventsRun", "run");
