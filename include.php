@@ -1,7 +1,7 @@
 <?php
 const RT_MODULE_DIR = __DIR__;
 
-function RaketaReadPathToArray($path)
+function WilpReadPathToArray($path)
 {
 	$arr = [];
 	if ($handle = opendir($path)) {
@@ -10,7 +10,7 @@ function RaketaReadPathToArray($path)
 				$entry != "." && $entry != ".." && $entry !== 'index.php' && $entry !== 'OptionsInfo.php' &&
 				(str_contains($entry, '.php') || !str_contains($entry, '.'))
 			) {
-				$arr[$entry] = RaketaReadPathToArray($path . '/' . $entry);
+				$arr[$entry] = WilpReadPathToArray($path . '/' . $entry);
 				if (is_array($arr[$entry]) && empty($arr[$entry])) {
 					unset($arr[$entry]);
 					$arr[] = $entry;
@@ -42,4 +42,4 @@ function computeFilePaths(array $fileTree): array
 	return $filePaths;
 }
 
-CModule::AddAutoloadClasses("wilpkron.bitrix_helper", computeFilePaths(RaketaReadPathToArray(__DIR__ . '/lib')));
+CModule::AddAutoloadClasses("wilpkron.bitrix_helper", computeFilePaths(WilpReadPathToArray(__DIR__ . '/lib')));

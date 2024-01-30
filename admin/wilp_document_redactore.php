@@ -9,10 +9,10 @@ use Bitrix\Main\Loader,
 	Bitrix\Currency,
 	Bitrix\Catalog,
 	Wilp\Model\SectionDocumentsTable,
-	Wilp\Table\RaketaDocumentsSectionsLinkTable;
+	Wilp\Table\WilpDocumentsSectionsLinkTable;
 require_once($_SERVER["DOCUMENT_ROOT"]."/bitrix/modules/main/include/prolog_admin_before.php");
 Loader::includeModule("iblock");
-Loader::includeModule("raketa.plastfoil");
+Loader::includeModule("wilpkron.bitrix_helper");
 require_once($_SERVER["DOCUMENT_ROOT"]."/bitrix/modules/iblock/prolog.php");
 IncludeModuleLangFile(__FILE__);
 IncludeModuleLangFile($_SERVER["DOCUMENT_ROOT"].BX_ROOT."/modules/main/interface/admin_lib.php");
@@ -86,7 +86,7 @@ if(!empty($_GET['SECTION_ID'])) {
 	])->fetchAll();
 
 } else {
-	$sectionWhithoutParent = RaketaDocumentsSectionsLinkTable::sectionWhithoutParent();
+	$sectionWhithoutParent = WilpDocumentsSectionsLinkTable::sectionWhithoutParent();
 	$res = SectionDocumentsTable::getList([
 		'filter' => [
 			'ID' => array_map(fn($item) => $item['ID'], $sectionWhithoutParent)
@@ -134,7 +134,7 @@ foreach ($res as $item) {
 	$list[] = [
 		'data' => $item,
 		'columns' => [
-			'NAME' => '<a href="/bitrix/admin/raketa_document_redactore.php?'.$linkParams.'">
+			'NAME' => '<a href="/bitrix/admin/wilp_document_redactore.php?'.$linkParams.'">
 			<span class="adm-submenu-item-link-icon adm-list-table-icon '. $class .' "></span>
 			'.$item['NAME'].'
 			</a>',
@@ -142,7 +142,7 @@ foreach ($res as $item) {
 		'actions' => [
 			[
 				'text'    => 'Редактировать',
-				'onclick' => 'document.location.href="/bitrix/admin/raketa_document_editor.php?'.$linkParams.'"'
+				'onclick' => 'document.location.href="/bitrix/admin/wilp_document_editor.php?'.$linkParams.'"'
 			],
 			[
 				'text'    => "Удалить раздел",
@@ -206,12 +206,12 @@ $APPLICATION->IncludeComponent('bitrix:main.ui.grid', '', [
 					[
 						'ID'   => 'actallrows_back-link',
 						'TYPE' => 'CUSTOM',
-						'VALUE' => '<button style="padding: 10px 20px;border-radius: 20px;"><a href="' . '/bitrix/admin/raketa_document_redactore.php?'.$linkParamsOut . '">Вернуться назад</a></button>',
+						'VALUE' => '<button style="padding: 10px 20px;border-radius: 20px;"><a href="' . '/bitrix/admin/wilp_document_redactore.php?'.$linkParamsOut . '">Вернуться назад</a></button>',
 					],
 					[
 						'ID'   => 'actallrows_back-link',
 						'TYPE' => 'CUSTOM',
-						'VALUE' => '<button style="padding: 10px 20px;border-radius: 20px;"><a href="' . '/bitrix/admin/raketa_document_editor.php?'.$linkParamsNew . '">Новый элеменит</a></button>',
+						'VALUE' => '<button style="padding: 10px 20px;border-radius: 20px;"><a href="' . '/bitrix/admin/wilp_document_editor.php?'.$linkParamsNew . '">Новый элеменит</a></button>',
 					]
 				]
 			]

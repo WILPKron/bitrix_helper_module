@@ -17,5 +17,5 @@ CJSCore::Init(["jquery"]);
 $APPLICATION->SetTitle('Конструктор меню');
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/modules/main/include/prolog_admin_after.php");
 ?>
-<?php $APPLICATION->IncludeComponent('raketa:admin.menueditor', '')?>
+<?php $APPLICATION->IncludeComponent('wilp:admin.menueditor', '')?>
 <?php require($_SERVER["DOCUMENT_ROOT"]."/bitrix/modules/main/include/epilog_admin.php"); ?>

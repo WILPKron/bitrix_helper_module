@@ -1,17 +1,17 @@
 <tr valign="top">
 	<td>Дополнительные поля:</td>
 	<td>
-		<style> .raketa-additional-options-setting { width: 100%; min-height: 200px; } </style>
+		<style> .wilp-additional-options-setting { width: 100%; min-height: 200px; } </style>
 		<textarea
 			name="<?=$strHTMLControlName["NAME"]?>[additional_options]"
-			class="raketa-additional-options-setting"
+			class="wilp-additional-options-setting"
 		><?=$arProperty["USER_TYPE_SETTINGS"]["additional_options"] ?? ''?></textarea>
 	</td>
 </tr>
 <tr valign="top">
 	<td>
 		<style>
-			.raketa-additional-options-setting-example code {
+			.wilp-additional-options-setting-example code {
 				/*white-space: pre-line;*/
 				background-color: black;
 				color: white;
@@ -21,7 +21,7 @@
 		</style>
 		Примеры заполнения:
 	</td>
-	<td class="raketa-additional-options-setting-example">
+	<td class="wilp-additional-options-setting-example">
 		<h3>Структура данных</h3>
 		<p>
 			<b>css</b> - объект содерижащий в себе настройки отображения<br>

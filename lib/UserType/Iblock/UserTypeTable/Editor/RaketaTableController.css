@@ -1,4 +1,4 @@
-.raketa-editor-table-wrapper {
+.wilp-editor-table-wrapper {
 	margin-bottom: 50px;
 	position: relative;
 	/* border: 1px solid #aeaeae; */
@@ -7,15 +7,15 @@
 	box-shadow: 0px 0px 6px 1px #e2e2e2;
 }
 
-.raketa-editor-table-wrapper textarea {
+.wilp-editor-table-wrapper textarea {
 	overflow: hidden;
 	display: block;
 }
-.raketa-editor-table-wrapper .table-description {
+.wilp-editor-table-wrapper .table-description {
 	font-size: 10px;
 	color:lightgray
 }
-.raketa-editor-table-wrapper .table {
+.wilp-editor-table-wrapper .table {
 	width: 100%;
 	margin-bottom: 20px;
 	border: 1px solid #dddddd;
@@ -23,33 +23,33 @@
 	background-color: white;
 }
 
-.raketa-editor-table-wrapper .table th {
+.wilp-editor-table-wrapper .table th {
 	padding: 5px;
 	font-weight: bold;
 	background: #efefef;
 	border: 1px solid black;
 }
 
-.raketa-editor-table-wrapper .table th textarea {
+.wilp-editor-table-wrapper .table th textarea {
 	background: #efefef;
 }
 
-.raketa-editor-table-wrapper .table td {
+.wilp-editor-table-wrapper .table td {
 	border: 1px solid black; /*#dddddd*/
 	padding: 10px;
 	position: relative
 }
 
-.raketa-editor-table-wrapper .table td._delete {
+.wilp-editor-table-wrapper .table td._delete {
 	background-color: #ffc7c7;
 }
 
-.raketa-editor-table-wrapper .table-container {
+.wilp-editor-table-wrapper .table-container {
 	overflow-x: auto;
 	max-width: 900px;
 }
 
-.raketa-editor-table-wrapper .table-btn-wrapper {
+.wilp-editor-table-wrapper .table-btn-wrapper {
 	max-width: 900px;
 	margin: 20px 0;
 	display: flex;
@@ -58,7 +58,7 @@
 	/*justify-content: center*/
 }
 
-.raketa-editor-table-wrapper .table-btn-wrapper span {
+.wilp-editor-table-wrapper .table-btn-wrapper span {
 	background-color: lightgray;
 	color: grey;
 	padding: 5px 5px;
@@ -70,11 +70,11 @@
 	gap: 10px;
 }
 
-.raketa-editor-table-wrapper .table-btn-wrapper span:hover {
+.wilp-editor-table-wrapper .table-btn-wrapper span:hover {
 	color: white;
 }
 
-.raketa-editor-table-wrapper .table-popup {
+.wilp-editor-table-wrapper .table-popup {
 	flex-direction: column;
 	gap: 5px;
 	padding: 10px;
@@ -84,38 +84,38 @@
 	display: none;
 }
 
-.raketa-editor-table-wrapper .table-popup._active {
+.wilp-editor-table-wrapper .table-popup._active {
 	display: flex;
 	opacity: 0.8;
 }
 
-.raketa-editor-table-wrapper .table-popup span {
+.wilp-editor-table-wrapper .table-popup span {
 	padding: 5px;
 	font-size: 11px;
 }
 
-.raketa-editor-table-wrapper .table-popup span:hover {
+.wilp-editor-table-wrapper .table-popup span:hover {
 	background-color: #0b011d;
 	color: white;
 	cursor: pointer;
 }
 
-.raketa-editor-table-wrapper .table-popup .container {
+.wilp-editor-table-wrapper .table-popup .container {
 	margin-left: 10px;
 	display: flex;
 	flex-direction: column;
 }
 
-.raketa-editor-table-wrapper .table-popup h5 {
+.wilp-editor-table-wrapper .table-popup h5 {
 	margin: 0;
 	padding: 5px 5px;
 }
 
-.raketa-editor-table-wrapper .table td.add {
+.wilp-editor-table-wrapper .table td.add {
 	background-color: #aeffae
 }
 
-.raketa-editor-table-wrapper .additional-fields {
+.wilp-editor-table-wrapper .additional-fields {
 	padding: 20px;
 	border: 2px dashed #b9b9b9;
 	display: flex;

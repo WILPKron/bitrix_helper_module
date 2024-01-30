@@ -1,8 +1,8 @@
-<div class="raketa-editor-table-wrapper js-raketa-editor-table-wrapper" id="<?= $strHTMLControlName['VALUE'] ?>">
+<div class="wilp-editor-table-wrapper js-wilp-editor-table-wrapper" id="<?= $strHTMLControlName['VALUE'] ?>">
 	<div class="table-container">
 		<h4>Таблица для заполнения</h4>
 		<table class="table">
-			<thead class="js-raketa-editor-table-head">
+			<thead class="js-wilp-editor-table-head">
 				<tr></tr>
 			</thead>
 			<tbody></tbody>

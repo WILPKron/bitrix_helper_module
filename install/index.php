@@ -50,7 +50,6 @@ class wilpkron_bitrix_helper extends CModule
 	{
 		$eventManager = EventManager::getInstance();
 		$this->UnInstallFiles();
-		//$eventManager->unRegisterEventHandler("iblock", "OnIBlockPropertyBuildList", $this->MODULE_ID, "\\Wilp\\UserType\\RaketaUserTypeTable", "GetUserTypeDescription");
 		$eventManager->unRegisterEventHandler("main", "OnPageStart", $this->MODULE_ID, "\\Wilp\\Events\\EventsRun", "run");
 		ModuleManager::unRegisterModule($this->MODULE_ID);
 	}

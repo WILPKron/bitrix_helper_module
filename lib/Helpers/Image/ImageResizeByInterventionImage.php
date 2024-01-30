@@ -4,7 +4,7 @@ namespace Wilp\Helpers\Image;
 
 class ImageResizeByInterventionImage
 {
-	public static $PUBLIC_DIR = '/upload/raketa_resize/';
+	public static $PUBLIC_DIR = '/upload/wilp_resize/';
 
 	public static function clearImageConvectorIBlock($pathResizeDirServer)
 	{

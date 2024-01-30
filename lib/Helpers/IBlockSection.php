@@ -18,7 +18,7 @@ class IBlockSection
 	public $cache = NULL;
 	public $taggedCache = NULL;
 	public $cacheKey = NUll;
-	public $cachePath = 'raketa-cache-iblock-section';
+	public $cachePath = 'wilp-cache-iblock-section';
 	public $cacheTtl = false;
 	public function __construct($cacheTtl = (86400 * 30))
 	{

@@ -106,7 +106,7 @@ class EventsRun
 		EventManager::getInstance()->addEventHandler('iblock', 'OnAfterIBlockSectionAdd', function (&$arFields) {
 			$iblockId = IBlockLID::IBlockIDByCode(IBlockLID::$IBLOCK_FILE_LIBRARY_GEREEAL);
 			if ($arFields["IBLOCK_ID"] == $iblockId && $arFields["ID"] > 0) {
-				\Wilp\Table\RaketaDocumentsSectionsLinkTable::add([
+				\Wilp\Table\WilpDocumentsSectionsLinkTable::add([
 					'IBLOCK_SECTION_PARENT_ID' => $arFields["ID"],
 					'IBLOCK_SECTION_CHILD_ID' => 0
 				]);
@@ -115,7 +115,7 @@ class EventsRun
 		EventManager::getInstance()->addEventHandler('iblock', 'OnAfterIBlockSectionDelete', function (&$arFields) {
 			$iblockId = IBlockLID::IBlockIDByCode(IBlockLID::$IBLOCK_FILE_LIBRARY_GEREEAL);
 			if ($arFields["IBLOCK_ID"] == $iblockId && $arFields["ID"] > 0) {
-				\Wilp\Table\RaketaDocumentsSectionsLinkTable::deleteAll($arFields['ID']);
+				\Wilp\Table\WilpDocumentsSectionsLinkTable::deleteAll($arFields['ID']);
 			}
 		});
 

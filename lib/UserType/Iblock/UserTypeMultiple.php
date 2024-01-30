@@ -91,46 +91,46 @@ class UserTypeMultiple
 		$sizeColumn = $css['tableColumn'] ?? 1;
 		?>
 		<style>
-			#contaner_<?=$arProperty['ID']?>.raketa-field-files-additional-fields {
+			#contaner_<?=$arProperty['ID']?>.wilp-field-files-additional-fields {
 				padding: 20px;
 				border: 2px dashed lightgray;
 				margin-bottom: 10px;
 				overflow: hidden;
 			}
-			#contaner_<?=$arProperty['ID']?>.raketa-field-files-additional-fields .additional-fields *:not(.adm-fileinput-item-saved) {
+			#contaner_<?=$arProperty['ID']?>.wilp-field-files-additional-fields .additional-fields *:not(.adm-fileinput-item-saved) {
 				box-sizing: border-box;
 			}
-			#contaner_<?=$arProperty['ID']?>.raketa-field-files-additional-fields.grid .additional-fields {
+			#contaner_<?=$arProperty['ID']?>.wilp-field-files-additional-fields.grid .additional-fields {
 				display: grid;
 				grid-gap: 10px;
 				grid-template-columns: repeat(<?=$sizeColumn?>, 1fr);
 			}
-			#contaner_<?=$arProperty['ID']?>.raketa-field-files-additional-fields.grid .additional-field.additional-field__max {
+			#contaner_<?=$arProperty['ID']?>.wilp-field-files-additional-fields.grid .additional-field.additional-field__max {
 				grid-column: 1 / -1;
 			}
 
 			<?php for($i = 1; $i <= $sizeColumn; $i++):?>
-				#contaner_<?=$arProperty['ID']?>.raketa-field-files-additional-fields.grid .additional-field.additional-field__<?=$i?> {
+				#contaner_<?=$arProperty['ID']?>.wilp-field-files-additional-fields.grid .additional-field.additional-field__<?=$i?> {
 					grid-column-end: span <?=$i?>;
 				}
 			<?php endfor?>
-			#contaner_<?=$arProperty['ID']?>.raketa-field-files-additional-fields .additional-field h4 {
+			#contaner_<?=$arProperty['ID']?>.wilp-field-files-additional-fields .additional-field h4 {
 				margin-top: 0;
 				margin-bottom: 10px;
 			}
-			#contaner_<?=$arProperty['ID']?>.raketa-field-files-additional-fields .error-message {
+			#contaner_<?=$arProperty['ID']?>.wilp-field-files-additional-fields .error-message {
 				color: red;
 				font-size: 18px;
 				margin-top: 20px;
 				display: block;
 			}
-			#contaner_<?=$arProperty['ID']?>.raketa-field-files-additional-fields .additional-field-type__radiolist input {
+			#contaner_<?=$arProperty['ID']?>.wilp-field-files-additional-fields .additional-field-type__radiolist input {
 				margin-left: 20px;
 			}
-			#contaner_<?=$arProperty['ID']?>.raketa-field-files-additional-fields .additional-field-type__text input {
+			#contaner_<?=$arProperty['ID']?>.wilp-field-files-additional-fields .additional-field-type__text input {
 				width: 100%;
 			}
-			#contaner_<?=$arProperty['ID']?>.raketa-field-files-additional-fields textarea {
+			#contaner_<?=$arProperty['ID']?>.wilp-field-files-additional-fields textarea {
 				width: 100% !important;
 				min-height: 100px;
 			}
@@ -144,7 +144,7 @@ class UserTypeMultiple
 		<?php
 
 
-		echo '<div class="raketa-field-files-additional-fields grid" id="contaner_' . $arProperty['ID'] . '">';
+		echo '<div class="wilp-field-files-additional-fields grid" id="contaner_' . $arProperty['ID'] . '">';
 		if(!empty($propertyValueID)) {
 			echo '<input type="hidden" value="' . $propertyValueID . '" name="' . $strHTMLControlName['VALUE'] . '[PROPERTY_VALUE_ID]">';
 		}

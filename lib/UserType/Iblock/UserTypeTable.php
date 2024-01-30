@@ -133,7 +133,7 @@ class UserTypeTable
 
 	public static function GetPropertyFieldHtml($arProperty, $value, $strHTMLControlName) //+ redactor
 	{
-		global $raketaTableEditor;
+		global $wilpTableEditor;
 		$additionalOptions = $arProperty['USER_TYPE_SETTINGS']['additional_options'] ?? false;
 		if($additionalOptions && is_string($additionalOptions)) {
 			try {
@@ -144,17 +144,17 @@ class UserTypeTable
 		}
 		ob_start();
 		?>
-			<?php if(empty($raketaTableEditor)):?>
+			<?php if(empty($wilpTableEditor)):?>
 				<style>
-					<?=file_get_contents(__DIR__ . '/UserTypeTable/Editor/RaketaTableController.css')?>
+					<?=file_get_contents(__DIR__ . '/UserTypeTable/Editor/WilpTableController.css')?>
 				</style>
-				<?php $raketaTableEditor = true?>
+				<?php $wilpTableEditor = true?>
 			<?php endif?>
 			<?php include __DIR__ . '/UserTypeTable/Editor/index.php'?>
 			<script>
 				(() => {
-					<?=file_get_contents(__DIR__ . '/UserTypeTable/Editor/RaketaTableController.js')?>
-					let tableController = new raketaTableController('<?=$strHTMLControlName['VALUE']?>', '<?=$value['VALUE']['JSON'] ?? ''?>');
+					<?=file_get_contents(__DIR__ . '/UserTypeTable/Editor/WilpTableController.js')?>
+					let tableController = new wilpTableController('<?=$strHTMLControlName['VALUE']?>', '<?=$value['VALUE']['JSON'] ?? ''?>');
 				})()
 			</script>
 		<?php
@@ -254,17 +254,17 @@ class UserTypeTable
 			<tr valign="top">
 				<td>Дополнительные поля:</td>
 				<td>
-					<style> .raketa-additional-options-setting { width: 100%; min-height: 200px; } </style>
+					<style> .wilp-additional-options-setting { width: 100%; min-height: 200px; } </style>
 					<textarea
 						name="<?=$strHTMLControlName["NAME"]?>[additional_options]"
-						class="raketa-additional-options-setting"
+						class="wilp-additional-options-setting"
 					><?=$arProperty["USER_TYPE_SETTINGS"]["additional_options"] ?? ''?></textarea>
 				</td>
 			</tr>
 			<tr valign="top">
 				<td>
 					<style>
-						.raketa-additional-options-setting-example code {
+						.wilp-additional-options-setting-example code {
 							white-space: pre-line;
 							background-color: black;
 							color: white;
@@ -274,10 +274,10 @@ class UserTypeTable
 					</style>
 					Примеры заполнения:
 				</td>
-				<td class="raketa-additional-options-setting-example">
+				<td class="wilp-additional-options-setting-example">
 					<span>Все поля оборачиваются в [field, field, field] скобки все данные заполняется в стиле JSON</span><br><br>
-					<div class="raketa-example-container">
-						<div class="raketa-example-line">
+					<div class="wilp-example-container">
+						<div class="wilp-example-line">
 							<h5>Текстовое поле</h5>
 							<code>{
 								&nbsp;&nbsp;"type":"text",
@@ -285,7 +285,7 @@ class UserTypeTable
 								&nbsp;&nbsp;"title":"Тестовый инпут"
 							}</code>
 						</div>
-						<div class="raketa-example-line">
+						<div class="wilp-example-line">
 							<h5>Чекбокс</h5>
 							<code>{
 								&nbsp;&nbsp;"type": "checkbox",
@@ -293,7 +293,7 @@ class UserTypeTable
 								&nbsp;&nbsp;"title": "Тестовый чекбокс"
 							}</code>
 						</div>
-						<div class="raketa-example-line">
+						<div class="wilp-example-line">
 							<h5>Большое текстовое поле</h5>
 							<code>{
 								&nbsp;&nbsp;"type": "textarea",
@@ -301,7 +301,7 @@ class UserTypeTable
 								&nbsp;&nbsp;"title": "Тестовое большое текстовое поле"
 							}</code>
 						</div>
-						<div class="raketa-example-line">
+						<div class="wilp-example-line">
 							<h5>Список</h5>
 							<code>{
 								&nbsp;&nbsp;"type": "select",

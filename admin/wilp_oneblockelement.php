@@ -17,5 +17,5 @@ CJSCore::Init(["jquery"]);
 $APPLICATION->SetTitle('Одностарничные инфоблоки');
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/modules/main/include/prolog_admin_after.php");
 ?>
-<?php $APPLICATION->IncludeComponent('wilp:admin.multiple_type_creator', '')?>
+	<?php $APPLICATION->IncludeComponent('wilp:admin.oneblockelement', '')?>
 <?php require($_SERVER["DOCUMENT_ROOT"]."/bitrix/modules/main/include/epilog_admin.php"); ?>

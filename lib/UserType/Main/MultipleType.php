@@ -17,7 +17,7 @@ class MultipleType extends BaseType
 {
 	public const
 		USER_TYPE_ID = 'multiply',
-		RENDER_COMPONENT = 'raketa:main.field.multiply';
+		RENDER_COMPONENT = 'wilp:main.field.multiply';
 
 	public static function getDescription(): array
 	{

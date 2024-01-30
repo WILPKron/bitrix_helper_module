@@ -7,17 +7,17 @@ Loc::loadMessages(__FILE__);
 // if ($APPLICATION->GetGroupRight('') != 'D') {
 	$aMenu = [
 		'parent_menu' => 'global_menu_content',
-		'section' => 'raketa',
+		'section' => 'wilp',
 		'sort' => 50,
-		'text' => "raketa.agency",
-		'title' => "raketa.agency",
+		'text' => "wilp.agency",
+		'title' => "wilp.agency",
 		'icon' => 'fav_menu_icon_yellow',
 		'page_icon' => 'fav_menu_icon_yellow',
 		'items_id' => 'menu_subscribe',
 		'items' => [
 			[
 				'text' => "Параметры модуля",
-				'url' => 'settings.php?lang=ru&mid=raketa.plastfoil',
+				'url' => 'settings.php?lang=ru&mid=wilpkron.bitrix_helper',
 				'icon' => 'util_menu_icon',
 				'more_url' => [
 					'posting_edit.php'
@@ -26,7 +26,7 @@ Loc::loadMessages(__FILE__);
 			],
 			[
 				'text' => "Одностарничные инфоблоки",
-				'url' => 'raketa_oneblockelement.php',
+				'url' => 'wilp_oneblockelement.php',
 				'icon' => 'rating_menu_icon',
 				'more_url' => [
 					'posting_edit.php'
@@ -44,7 +44,7 @@ Loc::loadMessages(__FILE__);
 			],
 			[
 				'text' => "Документы",
-				'url' => 'raketa_document_redactore.php',
+				'url' => 'wilp_document_redactore.php',
 				'icon' => 'util_menu_icon',
 				'more_url' => [
 					'posting_edit.php'
@@ -53,7 +53,7 @@ Loc::loadMessages(__FILE__);
 			],
 			[
 				'text' => 'Конструктор меню',
-				'url' => 'raketa_menu_editor.php',
+				'url' => 'wilp_menu_editor.php',
 				'icon' => 'util_menu_icon',
 			]
 		]

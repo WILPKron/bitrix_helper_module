@@ -27,7 +27,7 @@ class IBlockElement
 	public $cache = NULL;
 	public $taggedCache = NULL;
 	public $cacheKey = NUll;
-	public $cachePath = 'raketa-cache-iblock-element';
+	public $cachePath = 'wilp-cache-iblock-element';
 	public $cacheTtl = false;
 
 	public function __construct($cacheTtl = (86400 * 30))

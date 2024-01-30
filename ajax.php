@@ -1,7 +1,7 @@
 <?php
 require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/modules/main/include/prolog_before.php");
 
-if (!CModule::IncludeModule('raketa.plastfoil')) {
+if (!CModule::IncludeModule('wilpkron.bitrix_helper')) {
 	return;
 }
 

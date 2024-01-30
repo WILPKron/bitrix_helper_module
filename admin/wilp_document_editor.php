@@ -52,7 +52,7 @@ if(!empty($request->get('action'))) {
 
 		foreach ($newParent as $parentId) {
 			try {
-				\Wilp\Table\RaketaDocumentsSectionsLinkTable::add([
+				\Wilp\Table\WilpDocumentsSectionsLinkTable::add([
 					'IBLOCK_SECTION_PARENT_ID' => $parentId,
 					'IBLOCK_SECTION_CHILD_ID' => $sectionId
 				]);
@@ -60,7 +60,7 @@ if(!empty($request->get('action'))) {
 		}
 		foreach ($deleteParent as $parentId) {
 			try {
-				\Wilp\Table\RaketaDocumentsSectionsLinkTable::delete([
+				\Wilp\Table\WilpDocumentsSectionsLinkTable::delete([
 					'parent' => $parentId, 'child' => $sectionId
 				]);
 			} catch (Exception $exception) {}
@@ -184,60 +184,60 @@ $bVarsFromForm = [];
 
 ?>
 <style>
-	.raketa-documents-form {
+	.wilp-documents-form {
 		background: white;
 		padding: 40px;
 	}
-	.raketa-documents-form input[type="text"] {
+	.wilp-documents-form input[type="text"] {
 		font-size: 20px;
 		padding: 10px;
 		width: 100%;
 	}
-	.raketa-documents-form select {
+	.wilp-documents-form select {
 		font-size: 20px;
 		padding: 10px;
 		width: 100%;
 		min-height: 1000px;
 	}
-	.raketa-documents-form ul {
+	.wilp-documents-form ul {
 		padding: 10px 5px 5px 10px;
 		margin: 5px 5px 20px 10px;
 		text-decoration: none;
 		list-style: none;
 	}
-	.raketa-documents-form li {
+	.wilp-documents-form li {
 		color: white;
 		margin-bottom: 10px;
 	}
-	.raketa-documents-form .container {
+	.wilp-documents-form .container {
 		max-height: 700px;
 		overflow-y: scroll;
 		margin: 0 0 30px 0;
 	}
-	.raketa-documents-form .raketa-documents-content__toolBar button {
+	.wilp-documents-form .wilp-documents-content__toolBar button {
 		background: white;
 		color: #0B64AD;
 		border-radius: 20px;
 		padding: 10px 20px;
 		border: 1px solid #0B64AD;
 	}
-	.raketa-documents-form .raketa-documents-content__toolBar button:hover {
+	.wilp-documents-form .wilp-documents-content__toolBar button:hover {
 		background: #0B64AD;
 		color: white;
 		cursor: pointer;
 	}
-	.raketa-documents-form .raketa-documents-content__toolBar {
+	.wilp-documents-form .wilp-documents-content__toolBar {
 		display: flex;
 		justify-content: space-between;
 	}
-	.raketa-documents-form .raketa-documents-form__tags {
+	.wilp-documents-form .wilp-documents-form__tags {
 		background: #0A3A68;
 		margin: 0;
 	}
 
 </style>
-<div class="raketa-documents-content">
-	<form class="raketa-documents-form" action="">
+<div class="wilp-documents-content">
+	<form class="wilp-documents-form" action="">
 		<?php if(!empty($section['IBLOCK_ID'])):?>
 			<input type="hidden" name="IBLOCK_ID" value="<?=$section['IBLOCK_ID']?>">
 		<?php elseif (!empty($_GET['IBLOCK_ID'])):?>
@@ -268,7 +268,7 @@ $bVarsFromForm = [];
 		</lable>
 		<lable>
 			<h3>Теги файла:</h3>
-			<ul class="raketa-documents-form__tags">
+			<ul class="wilp-documents-form__tags">
 				<?php foreach ($tags as $tag):
 					$checked = !empty($section['UF_TAGS']) && in_array($tag, $section['UF_TAGS'] ?? []) ? 'checked' : '';
 					echo '<li><input name="UF_TAGS[]" type="checkbox" '.$checked.' value="'.$tag.'"/>'. $tag .'</li>';
@@ -280,7 +280,7 @@ $bVarsFromForm = [];
 			<h3>Дерево:</h3>
 			<?=treeBuilderSelect($tree, 0, $section, true)?>
 		</lable>
-		<div class="raketa-documents-content__toolBar">
+		<div class="wilp-documents-content__toolBar">
 			<?php if ($newElement === false):?>
 				<button name="action" type="submit" value="save">Сохранить</button>
 			<?php else:?>
